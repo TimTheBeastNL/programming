@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Lessons - Index</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        
+        .lesson-list {
+            list-style: none;
+        }
+        
+        .lesson-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .lesson-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .lesson-title {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .lesson-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .lesson-link {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+            flex: 1;
+            text-align: center;
+        }
+        
+        .test-link {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .test-link:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+        }
+        
+        .answer-link {
+            background-color: #2196F3;
+            color: white;
+        }
+        
+        .answer-link:hover {
+            background-color: #0b7dda;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .lesson-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Programming Lessons</h1>
+        <p class="subtitle">Welcome! Select a lesson below to view tests or answers.</p>
+        
+        <ul class="lesson-list">
+            <li class="lesson-item">
+                <div class="lesson-title">Lesson 1: Introduction to Programming</div>
+                <div class="lesson-links">
+                    <a href="files/lesson1-test.html" class="lesson-link test-link">📝 View Test</a>
+                    <a href="files/lesson1-answers.html" class="lesson-link answer-link">✅ View Answers</a>
+                </div>
+            </li>
+            
+            <li class="lesson-item">
+                <div class="lesson-title">Lesson 2: Variables and Data Types</div>
+                <div class="lesson-links">
+                    <a href="files/lesson2-test.html" class="lesson-link test-link">📝 View Test</a>
+                    <a href="files/lesson2-answers.html" class="lesson-link answer-link">✅ View Answers</a>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="footer">
+            <p>Programming Lessons Repository</p>
+            <p>Each lesson contains test questions and corresponding answers</p>
+        </div>
+    </div>
+</body>
+</html>
