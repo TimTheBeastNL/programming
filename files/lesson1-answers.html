@@ -1,59 +1,864 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="nl"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 1 - Answers</title>
+    <title>Antwoorden - Toets Arrays en File Handling</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            line-height: 1.6;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+        }
+
         h1 {
             color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
         }
+
+        .answer-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 5px solid #4caf50;
+            border-radius: 8px;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .question-text {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
         .answer {
-            background-color: #e7f3ff;
+            font-size: 1.1em;
+            color: #2e7d32;
+            font-weight: bold;
+            padding: 10px;
+            background: #e8f5e9;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .code-answer {
+            background: #2d2d2d;
+            color: #4caf50;
             padding: 15px;
-            margin: 20px 0;
-            border-left: 4px solid #2196F3;
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-        .back-link:hover {
-            background-color: #45a049;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin-top: 10px;
+            overflow-x: auto;
         }
     </style>
-</head>
-<body>
-    <h1>Lesson 1 - Answers</h1>
-    <p>This is the answer key for Lesson 1 test questions.</p>
-    
-    <div class="answer">
-        <h3>Answer 1:</h3>
-        <p>The purpose of this programming lesson is to introduce basic programming concepts and provide practice exercises.</p>
-    </div>
-    
-    <div class="answer">
-        <h3>Answer 2:</h3>
-        <pre><code>// Sample program
-function greet() {
-    console.log("Hello, World!");
+<script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					let params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000;
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					const el = document.getElementsByTagName( 'iframe' );
+					for ( let i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+
+							console.info( 'Setting iFrame height to ' + params.height );
+
+							if( el[i].getAttribute('lockwidth') !== 'true'){
+								el[i].style.width = '100%';
+								console.info( 'Setting iFrame width to 100%' );
+							}
+						}
+					}
+				});</script><script src="Antwoorden%20-%20Toets%20Arrays%20en%20File%20Handling_bestanden/embeds.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					window.D2L.EmbedRenderer.renderEmbeds(document.body);
+				});</script><script src="Antwoorden%20-%20Toets%20Arrays%20en%20File%20Handling_bestanden/mathjax.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.querySelector('math, .d2l-element, .d2l-cplus-layout') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+							document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+								elm.setAttribute('style', 'display: block; height: 0.5rem;');
+							});
+
+							document.querySelectorAll('math mmultiscripts > none').forEach(elm => {
+								const mrow = document.createElementNS('http://www.w3.org/1998/Math/MathML', 'mrow');
+								elm.replaceWith(mrow);
+							});
+
+							window.D2L.MathJax.loadMathJax({
+								outputScale: 1.5,
+								renderLatex: false,
+								enableMML3Support: false
+							});
+						}
+					});</script><script src="Antwoorden%20-%20Toets%20Arrays%20en%20File%20Handling_bestanden/prism.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script src="Antwoorden%20-%20Toets%20Arrays%20en%20File%20Handling_bestanden/creator.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', async () => {
+					const activities = [];
+					const practices = [];
+					const allPractices = document.querySelectorAll('.d2l-practice');
+					const elements = document.querySelectorAll('.d2l-element');
+					let layouts = [...document.querySelectorAll('.d2l-cplus-layout')];
+					const tables = document.querySelectorAll('table');
+					const contentStylerStyleLinks = document.querySelectorAll('head > link[href="https://templates.lcs.brightspace.com/lib/assets/css/styles.min.css"]');
+					const contentStylerOverides = document.querySelectorAll('head > link[href^="/d2l/le/contentstyler/"][data-override="override"]');
+
+					layouts = layouts.filter((layout) => layout.closest('.d2l-element.mceNonEditable') === null);
+
+					for (const practice of allPractices) {
+						const activityContainer = practice.hasAttribute('data-d2l-activity-href');
+						if (activityContainer) {
+							activities.push(practice);
+						}
+						else {
+							practices.push(practice);
+						}
+					}
+
+					if (layouts.length > 0) {
+						window.D2L.Creator.convertLayouts(layouts);
+					}
+					if (elements.length > 0) {
+						window.D2L.Creator.convertElements(elements, 145367, '/content/enforced/145367-H-ICT-P1-25-2025_HM/');
+					}
+					if (activities.length > 0) {
+						window.D2L.Creator.convertPracticeActivities(activities, 145367, '/content/enforced/145367-H-ICT-P1-25-2025_HM/');
+					}
+					if (practices.length > 0) {
+						window.D2L.Creator.convertPractices(practices, 145367, '/content/enforced/145367-H-ICT-P1-25-2025_HM/');
+					}
+					if (contentStylerStyleLinks.length > 0 && contentStylerOverides.length > 0 && tables.length > 0) {
+						window.D2L.Creator.wrapTables(tables);
+					}
+				});</script><script>function lti_launch( vars, target ) {
+						var query = '';
+						var new_tab = false;
+
+						for(var key in vars) {
+							if(query.length == 0) {
+								query += '?' + key + '=' + encodeURIComponent(vars[key]);
+							}
+							else {
+								query += '&' + key + '=' + encodeURIComponent(vars[key]);
+							}
+						}
+
+						var url = '/d2l/customization/pearsonlti/145367/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script><style id="d2l-colors">
+		html {
+			/* basic grays (lightest to darkest) */
+			--d2l-color-regolith: #f9fbff;
+			--d2l-color-sylvite: #f1f5fb;
+			--d2l-color-gypsum: #e3e9f1;
+			--d2l-color-mica: #cdd5dc;
+			--d2l-color-corundum: #b1b9be;
+			--d2l-color-chromite: #90989d;
+			--d2l-color-galena: #6e7477;
+			--d2l-color-tungsten: #494c4e;
+			--d2l-color-ferrite: #202122;
+
+			/* zircon */
+			--d2l-color-zircon-plus-2: #e0feff;
+			--d2l-color-zircon-plus-1: #00d2ed;
+			--d2l-color-zircon: #008eab;
+			--d2l-color-zircon-minus-1: #035670;
+
+			/* celestine */
+			--d2l-color-celestine-plus-2: #e8f8ff;
+			--d2l-color-celestine-plus-1: #29a6ff;
+			--d2l-color-celestine: #006fbf;
+			--d2l-color-celestine-minus-1: #004489;
+
+			/* amethyst */
+			--d2l-color-amethyst-plus-2: #f2f0ff;
+			--d2l-color-amethyst-plus-1: #8982ff;
+			--d2l-color-amethyst: #6038ff;
+			--d2l-color-amethyst-minus-1: #4500db;
+
+			/* fluorite */
+			--d2l-color-fluorite-plus-2: #f9ebff;
+			--d2l-color-fluorite-plus-1: #ce68fa;
+			--d2l-color-fluorite: #9d1fd4;
+			--d2l-color-fluorite-minus-1: #6900a0;
+
+			/* tourmaline */
+			--d2l-color-tourmaline-plus-2: #ffebf6;
+			--d2l-color-tourmaline-plus-1: #fd4e9d;
+			--d2l-color-tourmaline: #d40067;
+			--d2l-color-tourmaline-minus-1: #990056;
+
+			/* cinnabar */
+			--d2l-color-cinnabar-plus-2: #ffede8;
+			--d2l-color-cinnabar-plus-1: #ff575a;
+			--d2l-color-cinnabar: #cd2026;
+			--d2l-color-cinnabar-minus-1: #990006;
+
+			/* carnelian */
+			--d2l-color-carnelian-plus-1: #fff3e0;
+			--d2l-color-carnelian: #e87511;
+			--d2l-color-carnelian-minus-1: #ba4700;
+			--d2l-color-carnelian-minus-2: #7d2600;
+
+			/* citrine */
+			--d2l-color-citrine-plus-1: #fff9d6;
+			--d2l-color-citrine: #ffba59;
+			--d2l-color-citrine-minus-1: #c47400;
+			--d2l-color-citrine-minus-2: #7a4300;
+
+			/* peridot */
+			--d2l-color-peridot-plus-1: #efffd9;
+			--d2l-color-peridot: #8ad934;
+			--d2l-color-peridot-minus-1: #4a8f00;
+			--d2l-color-peridot-minus-2: #2f5e00;
+
+			/* olivine */
+			--d2l-color-olivine-plus-1: #e7ffe3;
+			--d2l-color-olivine: #46a661;
+			--d2l-color-olivine-minus-1: #027a21;
+			--d2l-color-olivine-minus-2: #005614;
+
+			/* malachite */
+			--d2l-color-malachite-plus-1: #e3fff5;
+			--d2l-color-malachite: #2de2c0;
+			--d2l-color-malachite-minus-1: #00a490;
+			--d2l-color-malachite-minus-2: #00635e;
+
+			/* primary accent */
+			--d2l-color-primary-accent-action: var(--d2l-color-celestine);
+			--d2l-color-primary-accent-indicator: var(--d2l-color-carnelian);
+
+			/* feedback */
+			--d2l-color-feedback-error: var(--d2l-color-cinnabar);
+			--d2l-color-feedback-warning: var(--d2l-color-carnelian);
+			--d2l-color-feedback-success: var(--d2l-color-olivine);
+			--d2l-color-feedback-action: var(--d2l-color-celestine);
+		}
+	</style><style id="d2l-typography-font-face">
+		
+	@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/Lato-400.woff2) format('woff2'),
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/Lato-400.woff) format('woff');
 }
-greet();
-</code></pre>
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	src:
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/Lato-700.woff2) format('woff2'),
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/Lato-700.woff) format('woff');
+}
+@font-face {
+	font-family: 'Noto Sans Thai';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/NotoSansThai-Regular.woff2) format('woff2'),
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/NotoSansThai-Regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'Noto Sans Thai';
+	font-style: normal;
+	font-weight: 700;
+	src:
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/NotoSansThai-Bold.woff2) format('woff2'),
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/NotoSansThai-Bold.woff) format('woff');
+}
+@font-face {
+	font-family: 'BC Sans';
+	font-style: normal;
+	font-weight: 300;
+	src:
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/BCSans-Light.woff2) format('woff2'),
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/BCSans-Light.woff) format('woff');
+}
+@font-face {
+	font-family: 'BC Sans';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/BCSans-Regular.woff2) format('woff2'),
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/BCSans-Regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'BC Sans';
+	font-style: normal;
+	font-weight: 700;
+	src:
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/BCSans-Bold.woff2) format('woff2'),
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/BCSans-Bold.woff) format('woff');
+}
+@font-face {
+	font-family: 'BC Sans';
+	font-style: italic;
+	font-weight: 300;
+	src:
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/BCSans-LightItalic.woff2) format('woff2'),
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/BCSans-LightItalic.woff) format('woff');
+}
+@font-face {
+	font-family: 'BC Sans';
+	font-style: italic;
+	font-weight: 400;
+	src:
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/BCSans-Italic.woff2) format('woff2'),
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/BCSans-Italic.woff) format('woff');
+}
+@font-face {
+	font-family: 'BC Sans';
+	font-style: italic;
+	font-weight: 700;
+	src:
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/BCSans-BoldItalic.woff2) format('woff2'),
+		url(https://s.brightspace.com/lib/fonts/0.6.4/assets/BCSans-BoldItalic.woff) format('woff');
+}
+	html {
+		--d2l-cursor-resize-inline-end: e-resize;
+		--d2l-cursor-resize-inline-start: w-resize;
+		--d2l-document-direction: ltr;
+		--d2l-inline-end: right;
+		--d2l-inline-start: left;
+		--d2l-length-factor: 1;
+		--d2l-mirror-transform: none;
+	}
+	html[dir="rtl"] {
+		--d2l-cursor-resize-inline-end: w-resize;
+		--d2l-cursor-resize-inline-start: e-resize;
+		--d2l-document-direction: rtl;
+		--d2l-inline-end: left;
+		--d2l-inline-start: right;
+		--d2l-length-factor: -1;
+		--d2l-mirror-transform: scale(-1, 1);
+	}
+
+	.d2l-typography {
+		color: var(--d2l-color-ferrite);
+		display: block;
+		font-family: "Lato", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		letter-spacing: 0.01rem;
+	}
+	
+		.d2l-typography {
+			font-size: 0.95rem;
+			font-weight: 400;
+			line-height: 1.4rem;
+		}
+		@media (max-width: 615px) {
+			.d2l-typography {
+				font-size: 0.8rem;
+				line-height: 1.2rem;
+			}
+		}
+	
+	.d2l-typography p {
+		margin: 1rem 0;
+	}
+
+	.d2l-typography:lang(ar), .d2l-typography :lang(ar) {
+		font-family: "Segoe UI", "Geeza Pro", sans-serif;
+	}
+	.d2l-typography:lang(ja), .d2l-typography :lang(ja) {
+		font-family: "Hiragino Kaku Gothic Pro", "Meiyro", sans-serif;
+	}
+	.d2l-typography:lang(ko), .d2l-typography :lang(ko) {
+		font-family: "Apple SD Gothic Neo", Dotum, sans-serif;
+	}
+	.d2l-typography:lang(th), .d2l-typography :lang(th), .d2l-typography:lang(tha), .d2l-typography :lang(tha) {
+		font-family: "Noto Sans Thai", system-ui, Tahoma;
+	}
+	.d2l-typography:lang(zh), .d2l-typography :lang(zh) {
+		font-family: "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+	}
+
+		
+		.d2l-typography .d2l-body-standard {
+			font-size: 0.95rem;
+			font-weight: 400;
+			line-height: 1.4rem;
+		}
+		@media (max-width: 615px) {
+			.d2l-typography .d2l-body-standard {
+				font-size: 0.8rem;
+				line-height: 1.2rem;
+			}
+		}
+	
+		
+		.d2l-typography .d2l-body-compact {
+			font-size: 0.8rem;
+			font-weight: 400;
+			line-height: 1.2rem;
+		}
+		
+	
+		
+		.d2l-typography .d2l-body-small {
+			color: var(--d2l-color-tungsten);
+			font-size: 0.7rem;
+			font-weight: 400;
+			line-height: 0.9rem;
+			margin: auto;
+		}
+		
+	
+		
+		.d2l-typography .d2l-label-text {
+			font-size: 0.7rem;
+			font-weight: 700;
+			letter-spacing: 0.2px;
+			line-height: 0.9rem;
+		}
+		
+	
+		
+		.d2l-typography .d2l-heading-1 {
+			font-size: 2rem;
+			font-weight: 400;
+			line-height: 2.4rem;
+			margin: 1.5rem 0 1.5rem 0;
+		}
+		@media (max-width: 615px) {
+			.d2l-typography .d2l-heading-1 {
+				font-size: 1.5rem;
+				line-height: 1.8rem;
+			}
+			
+		}
+	
+		
+		.d2l-typography .d2l-heading-2 {
+			font-size: 1.5rem;
+			font-weight: 400;
+			line-height: 1.8rem;
+			margin: 1.5rem 0 1.5rem 0;
+		}
+		@media (max-width: 615px) {
+			.d2l-typography .d2l-heading-2 {
+				font-size: 1rem;
+				font-weight: 700;
+				line-height: 1.5rem;
+			}
+			
+		}
+	
+		
+		.d2l-typography .d2l-heading-3 {
+			font-size: 1rem;
+			font-weight: 700;
+			line-height: 1.5rem;
+			margin: 1.5rem 0 1.5rem 0;
+		}
+		@media (max-width: 615px) {
+			.d2l-typography .d2l-heading-3 {
+				font-size: 0.8rem;
+				line-height: 1.2rem;
+			}
+			
+		}
+	
+		
+		.d2l-typography .d2l-heading-4 {
+			font-size: 0.8rem;
+			font-weight: 700;
+			line-height: 1.2rem;
+			margin: 1.5rem 0 1.5rem 0;
+		}
+	
+		
+		.d2l-typography .d2l-blockquote {
+			font-size: 0.8rem;
+			font-weight: 400;
+			line-height: 1.4rem;
+			margin-block: 0;
+			margin-inline: 0 1.2rem;
+			padding-block: 0.5rem 0;
+			padding-inline: 1.2rem 0;
+			position: relative;
+		}
+		.d2l-typography .d2l-blockquote::before {
+			content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAyMiAyMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+Cgk8ZGVmcz4KCQk8cGF0aCBpZD0iYSIgZD0iTTAgMGgyNHYyNEgweiIvPgoJPC9kZWZzPgoJPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEgLTEpIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgoJCTxtYXNrIGlkPSJiIiBmaWxsPSIjZmZmIj48dXNlIHhsaW5rOmhyZWY9IiNhIi8+PC9tYXNrPgoJCTxwYXRoIGQ9Ik02IDIyLjY2N0E0LjY2NyA0LjY2NyAwIDAgMCAxMC42NjcgMThjMC0xLjIyNy0uNTU5LTIuNS0xLjMzNC0zLjMzM0M4LjQ4MSAxMy43NSA3LjM1IDEzLjMzMyA2IDEzLjMzM2MtLjQxMSAwIDEuMzMzLTYuNjY2IDMtOSAxLjY2Ny0yLjMzMyAxLjMzMy0zIC4zMzMtM0M4IDEuMzMzIDUuMjUzIDQuNTg2IDQgNy4yNTUgMS43NzMgMTIgMS4zMzMgMTUuMzkyIDEuMzMzIDE4QTQuNjY3IDQuNjY3IDAgMCAwIDYgMjIuNjY3em0xMiAwQTQuNjY3IDQuNjY3IDAgMCAwIDIyLjY2NyAxOGMwLTEuMjI3LS41NTktMi41LTEuMzM0LTMuMzMzLS44NTItLjkxNy0xLjk4My0xLjMzNC0zLjMzMy0xLjMzNC0uNDExIDAgMS4zMzMtNi42NjYgMy05IDEuNjY3LTIuMzMzIDEuMzMzLTMgLjMzMy0zLTEuMzMzIDAtNC4wOCAzLjI1My01LjMzMyA1LjkyMkMxMy43NzMgMTIgMTMuMzMzIDE1LjM5MiAxMy4zMzMgMThBNC42NjcgNC42NjcgMCAwIDAgMTggMjIuNjY3eiIgZmlsbD0iI0QzRDlFMyIgbWFzaz0idXJsKCNiKSIvPgoJPC9nPgo8L3N2Zz4=");
+			inset-block-start: 0;
+			inset-inline-start: 0;
+			position: absolute;
+			transform: var(--d2l-mirror-transform, none); /* stylelint-disable-line @stylistic/string-quotes, @stylistic/function-whitespace-after */
+		}
+		@media (max-width: 615px) {
+			.d2l-typography .d2l-blockquote {
+				line-height: 1.2rem;
+			}
+		}
+	
+	</style></head>
+<body>
+    <div class="container">
+        <h1>Antwoorden - Toets Arrays en File Handling</h1>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 1</div>
+            <div class="question-text">Welke code gebruik je om een array van doubles aan te maken met 10 elementen?</div>
+            <div class="code-answer">double[] arr = new double[10];</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 2</div>
+            <div class="question-text">Wat gebeurt er in het geheugen wanneer je een array als parameter meegeeft aan een methode?</div>
+            <div class="answer">B. Er wordt alleen de verwijzing naar de array gekopieerd</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 3</div>
+            <div class="question-text">Wat is het Common Array Algoritme "Filling an Array"?</div>
+            <div class="answer">Het algoritme waarbij je een array vult met waarden, bijvoorbeeld door een loop te gebruiken om elementen toe te voegen</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 4</div>
+            <div class="question-text">Vul de code aan om een array te vullen vanuit een Scanner.</div>
+            <div class="code-answer">scanner.nextDouble()</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 5</div>
+            <div class="question-text">Welke loop is het meest geschikt voor het doorlopen van alle elementen in een array zonder de index nodig te hebben?</div>
+            <div class="answer">C. Enhanced for-loop (for-each)</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 6</div>
+            <div class="question-text">Vul de code aan voor het Common Array Algoritme "Average".</div>
+            <div class="code-answer">som / waarden.length</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 7</div>
+            <div class="question-text">Wat is het verschil tussen een "Fully Filled Array" en een "Partially Filled Array"?</div>
+            <div class="answer">Een Fully Filled Array bevat waarden in 
+alle elementen, terwijl een Partially Filled Array niet alle elementen 
+gebruikt (bijvoorbeeld met een sentinel waarde zoals -1000)</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 8</div>
+            <div class="question-text">Vul de code aan voor "Counting Matches". Tel hoeveel elementen in array "temperaturen" boven 20.0 zijn.</div>
+            <div class="code-answer">temp &gt; 20.0</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 9</div>
+            <div class="question-text">Bij het algoritme "Finding the First Match" wordt meestal een boolean variabele gebruikt. Wat is de naam van deze variabele?</div>
+            <div class="answer">D. beide eerste opties zijn correct (found/gevonden)</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 10</div>
+            <div class="question-text">Vul de code aan voor "Finding the First Match". Zoek de eerste waarde groter dan 25 in array "waarden".</div>
+            <div class="code-answer">positie &lt; waarden.length</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 11</div>
+            <div class="question-text">Wat is het doel van het Common Array Algoritme "Maximum"?</div>
+            <div class="answer">Het vinden van de hoogste waarde in een array door alle elementen te doorlopen en de grootste waarde bij te houden</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 12</div>
+            <div class="question-text">Vul de code aan voor het vinden van het maximum in array "temperaturen".</div>
+            <div class="code-answer">temp &gt; maximum</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 13</div>
+            <div class="question-text">Bij het lezen van temperaturen 
+uit een file worden de waarden vaak opgeslagen in tienden van graden. 
+Hoe converteer je 211 (tienden) naar graden Celsius?</div>
+            <div class="answer">B. 211 / 10.0</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 14</div>
+            <div class="question-text">Vul de code aan om een Scanner te maken die leest uit een file genaamd "temperatuur.txt".</div>
+            <div class="code-answer">new Scanner(new File("temperatuur.txt"))</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 15</div>
+            <div class="question-text">Wat is het verschil tussen een array als parameter en een primitief type (zoals int) als parameter?</div>
+            <div class="answer">Bij een array wordt de verwijzing 
+gekopieerd (pass-by-reference), bij primitieve types wordt de waarde 
+gekopieerd (pass-by-value). Wijzigingen aan array elementen zijn 
+zichtbaar buiten de methode, bij primitieve types niet.</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 16</div>
+            <div class="question-text">Vul de code aan om het minimum te vinden in array "waarden".</div>
+            <div class="code-answer">waarde &lt; minimum</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 17</div>
+            <div class="question-text">Welke methode van de KNMIReader class wordt gebruikt om de gegevens op te halen?</div>
+            <div class="answer">B. getGegevens()</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 18</div>
+            <div class="question-text">Vul de code aan om een KNMIReader aan te maken voor juli 2025.</div>
+            <div class="code-answer">new KNMIReader(2025, 7)</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 19</div>
+            <div class="question-text">Wat is een "warme dag" volgens de KNMI definitie?</div>
+            <div class="answer">Een dag waarbij de maximum temperatuur boven de 20 graden Celsius is</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 20</div>
+            <div class="question-text">Vul de code aan om te controleren of een temperatuur een zomerse dag is (boven 25 graden).</div>
+            <div class="code-answer">temperatuur &gt; 25</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 21</div>
+            <div class="question-text">Wat is een "tropische dag"?</div>
+            <div class="answer">C. Maximum temperatuur boven 30°C</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 22</div>
+            <div class="question-text">Vul de code aan om het aantal elementen in een file te tellen met een Scanner.</div>
+            <div class="code-answer">in.hasNextInt()</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 23</div>
+            <div class="question-text">Waarom moet je soms een nieuwe Scanner aanmaken nadat je een file hebt doorlopen om te tellen?</div>
+            <div class="answer">Omdat een Scanner een stream is die je 
+maar één keer kunt doorlopen. Na het tellen is de Scanner aan het einde 
+van de file, dus moet je een nieuwe maken om opnieuw te lezen.</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 24</div>
+            <div class="question-text">Vul de code aan om een array te 
+vullen met temperaturen uit een Scanner, waarbij temperaturen in tienden
+ van graden zijn opgeslagen.</div>
+            <div class="code-answer">in.nextInt() / 10.0</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 25</div>
+            <div class="question-text">Wat gebeurt er als je een array element probeert te wijzigen via een parameter in een methode?</div>
+            <div class="answer">B. De wijziging is zichtbaar in de originele array</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 26</div>
+            <div class="question-text">Vul de code aan om een methode te maken die het aantal matches telt in een array.</div>
+            <div class="code-answer">value == zoekterm</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 27</div>
+            <div class="question-text">Wat is het verschil tussen "Counting Matches" en "Finding the First Match"?</div>
+            <div class="answer">Counting Matches telt hoeveel elementen 
+aan een voorwaarde voldoen, terwijl Finding the First Match stopt zodra 
+het eerste element wordt gevonden dat aan de voorwaarde voldoet.</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 28</div>
+            <div class="question-text">Vul de code aan om de gemiddelde temperatuur te berekenen. De som is al berekend.</div>
+            <div class="code-answer">temperaturen.length</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 29</div>
+            <div class="question-text">Welke constructor van KNMIReader gebruik je om gegevens van een heel jaar op te halen?</div>
+            <div class="answer">B. KNMIReader(int jaar)</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 30</div>
+            <div class="question-text">Vul de code aan om de eerste positie te vinden waar een waarde groter is dan 30.</div>
+            <div class="code-answer">positie = i</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 31</div>
+            <div class="question-text">Wat is het voordeel van het gebruik van methodes bij array algoritmes?</div>
+            <div class="answer">Code wordt herbruikbaar, beter leesbaar, makkelijker te testen en te onderhouden door de verdeel-en-heers strategie.</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 32</div>
+            <div class="question-text">Vul de code aan om een array te kopiëren naar een nieuwe array.</div>
+            <div class="code-answer">kopie[i] = origineel[i]</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 33</div>
+            <div class="question-text">Wat is de juiste manier om te controleren of een Scanner nog meer integers heeft?</div>
+            <div class="answer">B. in.hasNextInt()</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 34</div>
+            <div class="question-text">Vul de code aan om het maximum te vinden, maar begin met de eerste waarde in plaats van 0.</div>
+            <div class="code-answer">waarden[0]</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 35</div>
+            <div class="question-text">Wat betekent het als een array "pass-by-reference" is?</div>
+            <div class="answer">Dat wanneer je een array als parameter 
+meegeeft, de methode werkt met dezelfde array in het geheugen, niet met 
+een kopie. Wijzigingen zijn dus permanent.</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 36</div>
+            <div class="question-text">Vul de code aan om een methode te maken die het minimum teruggeeft.</div>
+            <div class="code-answer">double value : values</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 37</div>
+            <div class="question-text">Hoeveel zomerse dagen zijn er minimaal nodig voor een hittegolf?</div>
+            <div class="answer">C. 5</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 38</div>
+            <div class="question-text">Vul de code aan om te controleren of alle elementen in een array positief zijn.</div>
+            <div class="code-answer">waarde &lt;= 0</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 39</div>
+            <div class="question-text">Wat is het verschil tussen een normale for-loop en een enhanced for-loop bij arrays?</div>
+            <div class="answer">Een normale for-loop geeft toegang tot 
+de index, een enhanced for-loop (for-each) doorloopt alleen de waarden 
+zonder index. Enhanced for-loop is handiger als je de index niet nodig 
+hebt.</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 40</div>
+            <div class="question-text">Vul de code aan om de som van alle elementen in een array te berekenen.</div>
+            <div class="code-answer">double waarde : waarden</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 41</div>
+            <div class="question-text">Wat gebeurt er als je probeert een element te benaderen op een index die buiten de array grenzen valt?</div>
+            <div class="answer">B. Er treedt een ArrayIndexOutOfBoundsException op</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 42</div>
+            <div class="question-text">Vul de code aan om een array te vullen met de waarden 1 tot en met 10.</div>
+            <div class="code-answer">i + 1</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 43</div>
+            <div class="question-text">Waarom gebruik je vaak een boolean variabele "gevonden" bij Finding the First Match?</div>
+            <div class="answer">Om bij te houden of het gezochte element
+ al is gevonden, zodat de loop kan stoppen zodra het eerste match is 
+gevonden en niet verder hoeft te zoeken.</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 44</div>
+            <div class="question-text">Vul de code aan om te controleren of een array leeg is (geen elementen bevat).</div>
+            <div class="code-answer">arr.length == 0</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 45</div>
+            <div class="question-text">Welke methode van KNMIReader geeft een String terug met de periode (bijv. "juli 2025")?</div>
+            <div class="answer">B. getPeriodeString()</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 46</div>
+            <div class="question-text">Vul de code aan om het aantal elementen te tellen die groter zijn dan het gemiddelde.</div>
+            <div class="code-answer">waarde &gt; gemiddelde</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 47</div>
+            <div class="question-text">Wat is het voordeel van het gebruik van een sentinel waarde (zoals -1000) in een Partially Filled Array?</div>
+            <div class="answer">Je kunt een vaste array grootte 
+gebruiken zonder te weten hoeveel elementen je precies nodig hebt, en de
+ sentinel waarde geeft aan waar de echte data eindigt.</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 48</div>
+            <div class="question-text">Vul de code aan om de laatste positie te vinden waar een waarde voorkomt.</div>
+            <div class="code-answer">laatstePositie = i</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 49</div>
+            <div class="question-text">Hoe maak je een Scanner die leest uit een File object?</div>
+            <div class="answer">A. new Scanner(file)</div>
+        </div>
+
+        <div class="answer-item">
+            <div class="question-number">Vraag 50</div>
+            <div class="question-text">Wat is de juiste manier om een array als return waarde terug te geven uit een methode?</div>
+            <div class="answer">A. return arr;</div>
+        </div>
+
     </div>
-    
-    <a href="../index.html" class="back-link">← Back to Index</a>
-</body>
-</html>
+
+
+
+</body></html>
